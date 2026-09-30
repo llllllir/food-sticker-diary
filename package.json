@@ -1,5 +1,5 @@
 {
-  "name": "site-creator-vinext-starter",
+  "name": "food-sticker-diary",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -11,11 +11,17 @@
     "build": "node scripts/run-framework.mjs build",
     "start": "node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js dev --config dist/server/wrangler.json --local --persist-to .wrangler/state --ip 127.0.0.1 --inspector-port 0",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
-    "db:generate": "drizzle-kit generate"
+    "db:generate": "drizzle-kit generate",
+    "local:build": "vite build --config vite.local.config.ts",
+    "local": "node local/server.mjs",
+    "typecheck": "tsc --noEmit",
+    "model:download": "node scripts/download-local-model.mjs",
+    "pages:build": "vite build --config vite.local.config.ts --mode pages && node scripts/package-pages.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
     "@hookform/resolvers": "^5.7.1",
+    "@imgly/background-removal": "^1.7.0",
     "@shadcn/react": "^0.3.0",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
@@ -27,6 +33,7 @@
     "lucide-react": "^1.31.0",
     "next": "16.3.4",
     "next-themes": "^0.4.6",
+    "onnxruntime-web": "^1.21.0",
     "radix-ui": "^1.6.7",
     "react": "19.2.6",
     "react-day-picker": "^10.0.1",

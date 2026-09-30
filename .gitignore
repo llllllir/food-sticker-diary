@@ -44,3 +44,11 @@ next-env.d.ts
 /.codex/
 /outputs/
 /work/
+/.local-data/
+/.local-models/
+/local-dist/
+*.tsbuildinfo
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+/pages-dist/
