@@ -17,6 +17,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run typecheck
+      - run: node scripts/test-cutout.mjs
       - run: npm run local:build
       - name: Validate local server syntax
         run: node --check local/server.mjs
